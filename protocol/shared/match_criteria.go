@@ -17,7 +17,7 @@ package shared
 //};
 
 type MatchCriteria struct {
-	AAID AAID
+	AAID []AAID
 	VendorID []string
 	KeyIDs   []KeyID
 	UserVerification uint64
