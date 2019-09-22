@@ -156,7 +156,7 @@ func TestRegRouter(t *testing.T){
 	router := SetupRouter()
 
 	w := httptest.NewRecorder()
-	req, _ := http.NewRequest("POST", "/reg", strings.NewReader(regRequestBody))
+	req, _ := http.NewRequest("POST", "/uaf/reg", strings.NewReader(regRequestBody))
 	router.ServeHTTP(w, req)
 
 	assert.Equal(t, 200, w.Code)

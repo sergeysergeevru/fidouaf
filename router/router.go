@@ -9,7 +9,8 @@ func SetupRouter() *gin.Engine {
 			"message": "pong",
 		})
 	})
-	r.POST("/reg", Registration)
+	r.POST("/uaf/reg", Registration)
+	r.GET("/registration", WebRegistration)
 	return r
 }
 
