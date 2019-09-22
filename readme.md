@@ -1,1 +1,2 @@
 [![Build Status](https://travis-ci.org/sergeysergeevru/fidouaf.svg?branch=master)](https://travis-ci.org/sergeysergeevru/fidouaf)
+[![Coverage Status](https://coveralls.io/repos/github/sergeysergeevru/fidouaf/badge.svg?branch=master)](https://coveralls.io/github/sergeysergeevru/fidouaf?branch=master)
