@@ -13,8 +13,6 @@ func main()  {
 	devs, err := ctx.OpenDevices(func(desc *gousb.DeviceDesc) bool {
 		// this function is called for every device present.
 		// Returning true means the device should be opened.
-		//fmt.Println(desc.Vendor)
-
 		fmt.Println(desc.String(), desc.Class, desc.SubClass)
 		if desc.Vendor == 0x096e {
 			return true
@@ -31,6 +29,5 @@ func main()  {
 	for _, d := range devs {
 		defer d.Close()
 	}
-	//dev := devs[0]
 
 }
