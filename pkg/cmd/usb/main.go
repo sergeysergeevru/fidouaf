@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/google/gousb"
+	"log"
 )
 
 func main()  {
@@ -29,5 +30,16 @@ func main()  {
 	for _, d := range devs {
 		defer d.Close()
 	}
+	dev := devs[0]
 
+	cfg, err := dev.Config(1)
+	if err != nil {
+		log.Fatalf("%s.Config(2): %v", dev, err)
+	}
+	defer cfg.Close()
+	intf, err := cfg.Interface(1, 0)
+	if err != nil {
+		log.Fatalf("%s.Interface(3, 0): %v", cfg, err)
+	}
+	defer intf.Close()
 }
