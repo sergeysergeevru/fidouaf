@@ -23,7 +23,7 @@ func main() {
 	}
 	fmt.Println("test sdf ds")
 	//              CID |CMD     |BCN |data
-	sr := []byte{0,0,0,1, 0x80|4, 0,1, 10}
+	sr := []byte{0,0,0,1, 0x80|3, 0,7, 0x00,0x03,0x00,0x00,0x00,0x0,0x00}
 
 	sr[0],sr[1] = regToMem(device.VendorID)
 	sr[2],sr[3] = regToMem(device.ProductID)
@@ -32,7 +32,7 @@ func main() {
 	fmt.Println(device.Write(sr))
 	t := make([]byte, 64)
 	fmt.Println(device.Read(t))
-	fmt.Println(t)
+	fmt.Println(string(t))
 
 }
 
