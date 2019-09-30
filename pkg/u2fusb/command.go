@@ -13,4 +13,25 @@ const (
 	FidoUsage     = 0x1
 )
 
-type U2fCommand uint8
+type U2fCommand byte
+
+func (c U2fCommand)IsError() bool {
+	return c == U2FHidError
+}
+
+func getCmdName(code U2fCommand) string  {
+	switch code {
+	case U2FHidPing:
+		return "U2FHID_PING"
+	case U2FHidMsg:
+		return "U2FHID_MSG"
+	case U2FHidInit:
+		return "U2FHID_INIT"
+	case U2FHidError:
+		return "U2FHID_ERROR"
+	case U2FHidWink:
+		return "U2FHID_WINK"
+		//todo:: lock cmd
+	}
+	return ""
+}
