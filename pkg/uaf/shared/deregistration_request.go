@@ -6,6 +6,6 @@ package shared
 //};
 
 type DeregistrationRequest struct {
-	Header OperationHeader
+	Header         OperationHeader
 	Authenticators []DeregisterAuthenticator
 }

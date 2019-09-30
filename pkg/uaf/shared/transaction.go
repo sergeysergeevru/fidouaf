@@ -1,6 +1,6 @@
 package shared
 
-import "github.com/sergeysergeevru/fidouaf/protocol/metadata"
+import "github.com/sergeysergeevru/fidouaf/pkg/uaf/metadata"
 
 //dictionary Transaction {
 //    required DOMString                  contentType;
@@ -9,7 +9,7 @@ import "github.com/sergeysergeevru/fidouaf/protocol/metadata"
 //};
 
 type Transaction struct {
-	ContentType string
-	Content string
+	ContentType                 string
+	Content                     string
 	TcDisplayPNGCharacteristics metadata.DisplayPNGCharacteristicsDescriptor
 }

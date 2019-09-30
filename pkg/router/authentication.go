@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/sergeysergeevru/fidouaf/webauthn"
+	"github.com/sergeysergeevru/fidouaf/pkg/webauthn"
 )
 
 func WebRegistration(c *gin.Context) {

@@ -8,8 +8,8 @@ package shared
 //};
 
 type FinalChallengeParams struct {
-	AppId string
-	Challenge ServerChallenge
-	FacetID string
+	AppId          string
+	Challenge      ServerChallenge
+	FacetID        string
 	ChannelBinding ChannelBinding
 }

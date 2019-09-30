@@ -6,6 +6,6 @@ package shared
 //};
 
 type DeregisterAuthenticator struct {
-	AAID AAID
+	AAID  AAID
 	KeyID KeyID
 }

@@ -7,7 +7,7 @@ package shared
 //};
 
 type AuthenticationResponse struct {
-	Header OperationHeader
-	FcParams string
+	Header     OperationHeader
+	FcParams   string
 	Assertions []AuthenticatorSignAssertion
 }

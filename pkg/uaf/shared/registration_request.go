@@ -8,8 +8,8 @@ package shared
 //};
 
 type RegistrationRequest struct {
-	Header OperationHeader
+	Header    OperationHeader
 	Challenge ServerChallenge
-	Username string
-	Policy Policy
+	Username  string
+	Policy    Policy
 }

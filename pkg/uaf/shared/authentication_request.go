@@ -8,8 +8,8 @@ package shared
 //};
 
 type AuthenticationRequest struct {
-	Header OperationHeader
-	Challenge ServerChallenge
+	Header      OperationHeader
+	Challenge   ServerChallenge
 	Transaction []Transaction
-	Policy Policy
+	Policy      Policy
 }

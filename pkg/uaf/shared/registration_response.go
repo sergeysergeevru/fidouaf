@@ -7,7 +7,7 @@ package shared
 //};
 
 type RegistrationResponse struct {
-	Header OperationHeader
-	FcParams string
+	Header     OperationHeader
+	FcParams   string
 	Assertions []AuthenticatorRegistrationAssertion
 }

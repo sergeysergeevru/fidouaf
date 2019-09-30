@@ -1,6 +1,8 @@
 package shared
 
-import "github.com/sergeysergeevru/fidouaf/protocol/metadata"
+import (
+	"github.com/sergeysergeevru/fidouaf/pkg/uaf/metadata"
+	)
 
 //dictionary AuthenticatorRegistrationAssertion {
 //    required DOMString                    assertionScheme;

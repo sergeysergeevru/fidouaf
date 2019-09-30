@@ -1,11 +1,11 @@
 package router
 
 import (
+	"github.com/stretchr/testify/assert"
 	"net/http"
 	"net/http/httptest"
 	"strings"
 	"testing"
-	"github.com/stretchr/testify/assert"
 )
 
 var regRequestBody = `[

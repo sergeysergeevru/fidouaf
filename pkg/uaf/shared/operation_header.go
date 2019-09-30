@@ -9,9 +9,9 @@ package shared
 //};
 
 type OperationHeader struct {
-	Upv Version
-	Op Operation
-	AppID string
+	Upv        Version
+	Op         Operation
+	AppID      string
 	ServerData string
-	Exts []Extension
+	Exts       []Extension
 }

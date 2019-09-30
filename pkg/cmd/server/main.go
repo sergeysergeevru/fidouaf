@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/sergeysergeevru/fidouaf/router"
+	"github.com/sergeysergeevru/fidouaf/pkg/router"
 )
 
 
