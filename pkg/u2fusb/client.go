@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/karalabe/hid"
 	"unsafe"
+	"github.com/sirupsen/logrus"
 )
 
 type InitializationPacket struct {
@@ -36,6 +37,7 @@ type U2fDevice struct {
 }
 
 func NewDevice(device *hid.Device) *U2fDevice {
+	logrus.Debug("new device")
 	return &U2fDevice{device}
 }
 
@@ -47,9 +49,20 @@ func IsU2fDevice(d hid.DeviceInfo) bool {
 }
 
 func DiscoverU2fDevices() []hid.DeviceInfo {
+	logrus.Debug("Device searching")
 	var u2fDevices []hid.DeviceInfo
-	devs := hid.Enumerate(0,0)
+	devs := hid.Enumerate(2414,2128)
 	for _, d := range devs {
+		logrus.WithFields(logrus.Fields{
+			"Path": d.Path,
+			"VendonID": d.VendorID,
+			"Serial": d.Serial,
+			"Manufacturer": d.Manufacturer,
+			"Product": d.Product,
+			"Interface": d.Interface,
+			"Usage": d.Usage,
+			"UsagePage": d.UsagePage,
+		}).Debug("Find device")
 		if IsU2fDevice(d) {
 			u2fDevices = append(u2fDevices, d)
 		}
@@ -58,6 +71,7 @@ func DiscoverU2fDevices() []hid.DeviceInfo {
 }
 
 func (d *U2fDevice)U2FHidInit()  {
+	logrus.Debug("U2FHID_INIT")
 	cid := uint32(d.device.VendorID)<<16|uint32(d.device.ProductID)
 	p := &InitializationPacket{
 		CID: cid,
